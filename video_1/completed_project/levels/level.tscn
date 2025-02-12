@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cikwbk42w65qc"]
+
+[ext_resource type="PackedScene" uid="uid://cwlgqwyg5av1d" path="res://player/pirate.tscn" id="1_hmhtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsvp4"]
+size = Vector2(152, 2)
+
+[node name="Level" type="Node2D"]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_hsvp4")
+
+[node name="Pirate" parent="." instance=ExtResource("1_hmhtt")]
+position = Vector2(0, -8)
+
+[node name="Camera2D" type="Camera2D" parent="Pirate"]
+zoom = Vector2(4, 4)
