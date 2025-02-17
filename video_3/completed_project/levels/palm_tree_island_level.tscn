@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=4 uid="uid://bice8860qtqsv"]
+
+[ext_resource type="PackedScene" uid="uid://c3tyvnf1w10tc" path="res://levels/level_base.tscn" id="1_wggtf"]
+[ext_resource type="TileSet" uid="uid://dxbdpic5tr447" path="res://levels/palm_tree_island_tile_set.tres" id="2_avlcg"]
+[ext_resource type="PackedScene" uid="uid://suj5x4cqcbx3" path="res://palm_trees/back_palm_tree_left.tscn" id="3_mcl6o"]
+[ext_resource type="PackedScene" uid="uid://s0xqxvrpis0o" path="res://palm_trees/back_palm_tree_regular.tscn" id="4_4whw0"]
+[ext_resource type="PackedScene" uid="uid://prxbttcmnvvk" path="res://palm_trees/back_palm_tree_right.tscn" id="5_gfv43"]
+[ext_resource type="PackedScene" uid="uid://bc12ujrfxvpg" path="res://palm_trees/front_palm_tree_left.tscn" id="6_kbnsq"]
+[ext_resource type="PackedScene" uid="uid://dqpdb0jb266xh" path="res://palm_trees/front_palm_tree_right.tscn" id="7_vqgwb"]
+[ext_resource type="PackedScene" uid="uid://dd62af8cqodf4" path="res://palm_trees/front_palm_tree_regular.tscn" id="8_0defv"]
+
+[node name="PalmTreeIslandLevel" instance=ExtResource("1_wggtf")]
+
+[node name="TileMap" parent="TileMapLayers" index="0"]
+tile_map_data = PackedByteArray("AAAEAAIAAAABAAEAAAAEAAEAAAABAAAAAAADAAIAAAABAAEAAAADAAEAAAABAAAAAAACAAIAAAABAAEAAAACAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAEAAAABAAAAAAAAAAIAAAABAAEAAAAAAAEAAAABAAAAAAD//wIAAAABAAEAAAD//wEAAAABAAAAAAD+/wIAAAABAAEAAAD+/wEAAAAGAAEAAAD9/wIAAAABAAEAAAD9/wEAAAABAAEAAAD8/wIAAAABAAEAAAD8/wEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAABAAAAAAD8/wAAAAABAAEAAAD8////AAAGAAEAAAD8//7/AAACAAEAAAD8//3/AAACAAAAAAD7/wIAAAABAAEAAAD7/wEAAAABAAEAAAD7/wAAAAABAAEAAAD7////AAABAAEAAAD7//7/AAABAAEAAAD7//3/AAABAAAAAAD6/wIAAAABAAEAAAD6/wEAAAABAAEAAAD6/wAAAAABAAEAAAD6////AAABAAEAAAD6//7/AAABAAEAAAD6//3/AAABAAAAAAD5/wIAAAABAAEAAAD5/wEAAAABAAEAAAD5/wAAAAABAAEAAAD5////AAAHAAEAAAD5//7/AAAAAAEAAAD5//3/AAAAAAAAAAD4/wEAAAABAAEAAAD4/wAAAAABAAEAAAD4////AAABAAAAAAD3/wEAAAAAAAEAAAD3/wAAAAAAAAEAAAD3////AAAAAAAAAAD4/wMAAAABAAIAAAD4/wIAAAABAAEAAAD3/wMAAAABAAIAAAD3/wIAAAAHAAEAAAD2/wMAAAABAAIAAAD2/wIAAAABAAAAAAD1/wMAAAAAAAIAAAD1/wIAAAAAAAAAAAD+/wAAAAACAAEAAAD+////AAACAAAAAAD9/wAAAAABAAEAAAD9////AAABAAAAAAAGAAIAAAABAAEAAAAGAAEAAAAHAAEAAAAGAAAAAAAAAAEAAAAGAP//AAAAAAAAAAAGAAMAAAABAAIAAAAFAAMAAAABAAIAAAAEAAMAAAABAAIAAAADAAMAAAABAAIAAAACAAMAAAABAAIAAAABAAMAAAABAAIAAAAAAAMAAAABAAIAAAD//wMAAAABAAIAAAD+/wMAAAABAAIAAAD9/wMAAAABAAIAAAD8/wMAAAABAAIAAAD7/wMAAAABAAIAAAD6/wMAAAABAAIAAAD5/wMAAAABAAIAAAAJAAMAAAACAAIAAAAJAAIAAAACAAEAAAAJAAEAAAACAAEAAAAJAAAAAAACAAEAAAAJAP//AAACAAEAAAAJAP7/AAACAAAAAAAIAAMAAAABAAIAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAEAAAAIAP//AAAHAAEAAAAIAP7/AAAAAAAAAAAHAAMAAAABAAIAAAAHAAIAAAABAAEAAAAHAAEAAAABAAEAAAAHAAAAAAABAAEAAAAHAP//AAABAAAAAAA=")
+tile_set = ExtResource("2_avlcg")
+
+[node name="BackPalmTrees" type="Node2D" parent="." index="2"]
+z_index = -1
+
+[node name="BackPalmTreeLeft" parent="BackPalmTrees" index="0" instance=ExtResource("3_mcl6o")]
+position = Vector2(-76, -82)
+
+[node name="BackPalmTreeRegular" parent="BackPalmTrees" index="1" instance=ExtResource("4_4whw0")]
+position = Vector2(46, 2)
+
+[node name="BackPalmTreeRight" parent="BackPalmTrees" index="2" instance=ExtResource("5_gfv43")]
+position = Vector2(174, -13)
+
+[node name="FrontPalmTrees" type="Node2D" parent="." index="3"]
+
+[node name="FrontPalmTreeLeft" parent="FrontPalmTrees" index="0" instance=ExtResource("6_kbnsq")]
+position = Vector2(-15, -45)
+
+[node name="FrontPalmTreeRight" parent="FrontPalmTrees" index="1" instance=ExtResource("7_vqgwb")]
+position = Vector2(234, -75)
+
+[node name="FrontPalmTreeRegular" parent="FrontPalmTrees" index="2" instance=ExtResource("8_0defv")]
+position = Vector2(115, -6)
