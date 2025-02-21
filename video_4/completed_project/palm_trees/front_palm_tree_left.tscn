@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc12ujrfxvpg"]
+
+[ext_resource type="PackedScene" uid="uid://c4wnoyc6h0b1i" path="res://palm_trees/front_palm_tree.tscn" id="1_1iwi2"]
+
+[node name="FrontPalmTreeLeft" instance=ExtResource("1_1iwi2")]
+
+[node name="Stem" parent="." index="1"]
+position = Vector2(-19, 27)
+region_rect = Rect2(37, 32, 46, 22)

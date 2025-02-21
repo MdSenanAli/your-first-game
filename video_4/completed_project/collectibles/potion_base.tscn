@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4jrgjptejde7"]
+
+[ext_resource type="PackedScene" uid="uid://bxq4td8qwqg30" path="res://collectibles/collectible_base.tscn" id="1_5cfe3"]
+[ext_resource type="Texture2D" uid="uid://dqkcd1jc16eyq" path="res://assets/Pirate Treasure/Sprites/Potion Effect/01.png" id="2_g3b0f"]
+[ext_resource type="Texture2D" uid="uid://ditnb2ejyfg8m" path="res://assets/Pirate Treasure/Sprites/Potion Effect/02.png" id="3_w3qxy"]
+[ext_resource type="Texture2D" uid="uid://iie6ndfulqfg" path="res://assets/Pirate Treasure/Sprites/Potion Effect/03.png" id="4_d48c6"]
+[ext_resource type="Texture2D" uid="uid://cgnays4mgaq44" path="res://assets/Pirate Treasure/Sprites/Potion Effect/04.png" id="5_tasx7"]
+[ext_resource type="AudioStream" uid="uid://boongojx12xxy" path="res://sound_effects/potion.mp3" id="6_8vwhs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ok7v"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g3b0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w3qxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d48c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tasx7")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[node name="PotionBase" instance=ExtResource("1_5cfe3")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_3ok7v")
+
+[node name="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("6_8vwhs")

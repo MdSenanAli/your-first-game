@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbpuc8oo8xp8m"]
+
+[ext_resource type="PackedScene" uid="uid://cditck3j0n7bt" path="res://collectibles/coin_base.tscn" id="1_4ftbm"]
+[ext_resource type="Texture2D" uid="uid://nt3qwgttki3i" path="res://assets/Pirate Treasure/Sprites/Coin Effect/01.png" id="2_gtgxr"]
+[ext_resource type="Texture2D" uid="uid://vnwj7fododhf" path="res://assets/Pirate Treasure/Sprites/Silver Coin/01.png" id="2_t62ht"]
+[ext_resource type="Texture2D" uid="uid://boxrp4ggv7jgq" path="res://assets/Pirate Treasure/Sprites/Coin Effect/02.png" id="3_17osd"]
+[ext_resource type="Texture2D" uid="uid://dasleltuxla42" path="res://assets/Pirate Treasure/Sprites/Silver Coin/02.png" id="3_aqi7k"]
+[ext_resource type="Texture2D" uid="uid://dx46jxlg62qrf" path="res://assets/Pirate Treasure/Sprites/Coin Effect/03.png" id="4_hnh76"]
+[ext_resource type="Texture2D" uid="uid://bpqgrxq40drip" path="res://assets/Pirate Treasure/Sprites/Silver Coin/03.png" id="4_yf24h"]
+[ext_resource type="Texture2D" uid="uid://b20uwfuv4dy34" path="res://assets/Pirate Treasure/Sprites/Silver Coin/04.png" id="5_q1vw8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ey0b7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gtgxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_17osd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hnh76")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t62ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aqi7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yf24h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q1vw8")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[node name="SilverCoin" instance=ExtResource("1_4ftbm")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ey0b7")
+animation = &"spin"

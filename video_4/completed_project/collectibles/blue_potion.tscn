@@ -1,0 +1,75 @@
+[gd_scene load_steps=15 format=3 uid="uid://dnoaf560pr1br"]
+
+[ext_resource type="PackedScene" uid="uid://b4jrgjptejde7" path="res://collectibles/potion_base.tscn" id="1_x02hq"]
+[ext_resource type="Texture2D" uid="uid://dqkcd1jc16eyq" path="res://assets/Pirate Treasure/Sprites/Potion Effect/01.png" id="2_od37r"]
+[ext_resource type="Texture2D" uid="uid://ditnb2ejyfg8m" path="res://assets/Pirate Treasure/Sprites/Potion Effect/02.png" id="3_eq6t3"]
+[ext_resource type="Texture2D" uid="uid://iie6ndfulqfg" path="res://assets/Pirate Treasure/Sprites/Potion Effect/03.png" id="4_17u3o"]
+[ext_resource type="Texture2D" uid="uid://cgnays4mgaq44" path="res://assets/Pirate Treasure/Sprites/Potion Effect/04.png" id="5_3bxso"]
+[ext_resource type="Texture2D" uid="uid://b4pjwmaiulo8a" path="res://assets/Pirate Treasure/Sprites/Blue Potion/01.png" id="6_qq824"]
+[ext_resource type="Texture2D" uid="uid://ckhv8b5c02g52" path="res://assets/Pirate Treasure/Sprites/Blue Potion/02.png" id="7_17is6"]
+[ext_resource type="Texture2D" uid="uid://0c5agbjrc7pf" path="res://assets/Pirate Treasure/Sprites/Blue Potion/03.png" id="8_2okfn"]
+[ext_resource type="Texture2D" uid="uid://bpj0ercuxskhp" path="res://assets/Pirate Treasure/Sprites/Blue Potion/04.png" id="9_o3k4i"]
+[ext_resource type="Texture2D" uid="uid://dnbvtthc1qewm" path="res://assets/Pirate Treasure/Sprites/Blue Potion/05.png" id="10_vfos8"]
+[ext_resource type="Texture2D" uid="uid://db0wxcg0qp7q" path="res://assets/Pirate Treasure/Sprites/Blue Potion/06.png" id="11_ru581"]
+[ext_resource type="Texture2D" uid="uid://cifklx4ybt58s" path="res://assets/Pirate Treasure/Sprites/Blue Potion/07.png" id="12_xspri"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emraj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_od37r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eq6t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_17u3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3bxso")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qq824")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_17is6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2okfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o3k4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vfos8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ru581")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xspri")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ar58v"]
+radius = 2.0
+height = 14.0
+
+[node name="BluePotion" instance=ExtResource("1_x02hq")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_emraj")
+animation = &"spin"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_ar58v")
