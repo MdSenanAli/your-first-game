@@ -1,0 +1,78 @@
+[gd_scene load_steps=18 format=4 uid="uid://bice8860qtqsv"]
+
+[ext_resource type="PackedScene" uid="uid://c3tyvnf1w10tc" path="res://levels/level_base.tscn" id="1_wggtf"]
+[ext_resource type="TileSet" uid="uid://dxbdpic5tr447" path="res://levels/palm_tree_island_tile_set.tres" id="2_avlcg"]
+[ext_resource type="PackedScene" uid="uid://suj5x4cqcbx3" path="res://palm_trees/back_palm_tree_left.tscn" id="3_mcl6o"]
+[ext_resource type="PackedScene" uid="uid://s0xqxvrpis0o" path="res://palm_trees/back_palm_tree_regular.tscn" id="4_4whw0"]
+[ext_resource type="PackedScene" uid="uid://prxbttcmnvvk" path="res://palm_trees/back_palm_tree_right.tscn" id="5_gfv43"]
+[ext_resource type="PackedScene" uid="uid://bc12ujrfxvpg" path="res://palm_trees/front_palm_tree_left.tscn" id="6_kbnsq"]
+[ext_resource type="PackedScene" uid="uid://dqpdb0jb266xh" path="res://palm_trees/front_palm_tree_right.tscn" id="7_vqgwb"]
+[ext_resource type="PackedScene" uid="uid://dd62af8cqodf4" path="res://palm_trees/front_palm_tree_regular.tscn" id="8_0defv"]
+[ext_resource type="PackedScene" uid="uid://536kkqq4f1ml" path="res://collectibles/gold_coin.tscn" id="9_5b0o5"]
+[ext_resource type="PackedScene" uid="uid://cbpuc8oo8xp8m" path="res://collectibles/silver_coin.tscn" id="10_bo7in"]
+[ext_resource type="PackedScene" uid="uid://4rbjem7gfwsj" path="res://collectibles/golden_skull.tscn" id="11_psdgm"]
+[ext_resource type="PackedScene" uid="uid://bucqyoh1v70l4" path="res://collectibles/red_potion.tscn" id="12_ph8dx"]
+[ext_resource type="PackedScene" uid="uid://dnoaf560pr1br" path="res://collectibles/blue_potion.tscn" id="13_nbx5k"]
+[ext_resource type="PackedScene" uid="uid://q4b6ic1i6nw7" path="res://collectibles/green_potion.tscn" id="14_vkx1x"]
+[ext_resource type="PackedScene" uid="uid://h1ccvo1c4hjx" path="res://collectibles/green_crystal.tscn" id="15_qmu0v"]
+[ext_resource type="PackedScene" uid="uid://d2k5vxmdr0vel" path="res://collectibles/blue_crystal.tscn" id="16_ehuue"]
+[ext_resource type="PackedScene" uid="uid://d0ss4dv4orkjt" path="res://collectibles/red_crystal.tscn" id="17_x5dux"]
+
+[node name="PalmTreeIslandLevel" instance=ExtResource("1_wggtf")]
+
+[node name="TileMap" parent="TileMapLayers" index="0"]
+tile_map_data = PackedByteArray("AAAEAAIAAAABAAEAAAAEAAEAAAABAAAAAAADAAIAAAABAAEAAAADAAEAAAABAAAAAAACAAIAAAABAAEAAAACAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAEAAAABAAAAAAAAAAIAAAABAAEAAAAAAAEAAAABAAAAAAD//wIAAAABAAEAAAD//wEAAAABAAAAAAD+/wIAAAABAAEAAAD+/wEAAAAGAAEAAAD9/wIAAAABAAEAAAD9/wEAAAABAAEAAAD8/wIAAAABAAEAAAD8/wEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAABAAAAAAD8/wAAAAABAAEAAAD8////AAAGAAEAAAD8//7/AAACAAEAAAD8//3/AAACAAAAAAD7/wIAAAABAAEAAAD7/wEAAAABAAEAAAD7/wAAAAABAAEAAAD7////AAABAAEAAAD7//7/AAABAAEAAAD7//3/AAABAAAAAAD6/wIAAAABAAEAAAD6/wEAAAABAAEAAAD6/wAAAAABAAEAAAD6////AAABAAEAAAD6//7/AAABAAEAAAD6//3/AAABAAAAAAD5/wIAAAABAAEAAAD5/wEAAAABAAEAAAD5/wAAAAABAAEAAAD5////AAAHAAEAAAD5//7/AAAAAAEAAAD5//3/AAAAAAAAAAD4/wEAAAABAAEAAAD4/wAAAAABAAEAAAD4////AAABAAAAAAD3/wEAAAAAAAEAAAD3/wAAAAAAAAEAAAD3////AAAAAAAAAAD4/wMAAAABAAIAAAD4/wIAAAABAAEAAAD3/wMAAAABAAIAAAD3/wIAAAAHAAEAAAD2/wMAAAABAAIAAAD2/wIAAAABAAAAAAD1/wMAAAAAAAIAAAD1/wIAAAAAAAAAAAD+/wAAAAACAAEAAAD+////AAACAAAAAAD9/wAAAAABAAEAAAD9////AAABAAAAAAAGAAIAAAABAAEAAAAGAAEAAAAHAAEAAAAGAAAAAAAAAAEAAAAGAP//AAAAAAAAAAAGAAMAAAABAAIAAAAFAAMAAAABAAIAAAAEAAMAAAABAAIAAAADAAMAAAABAAIAAAACAAMAAAABAAIAAAABAAMAAAABAAIAAAAAAAMAAAABAAIAAAD//wMAAAABAAIAAAD+/wMAAAABAAIAAAD9/wMAAAABAAIAAAD8/wMAAAABAAIAAAD7/wMAAAABAAIAAAD6/wMAAAABAAIAAAD5/wMAAAABAAIAAAAJAAMAAAACAAIAAAAJAAIAAAACAAEAAAAJAAEAAAACAAEAAAAJAAAAAAACAAEAAAAJAP//AAACAAEAAAAJAP7/AAACAAAAAAAIAAMAAAABAAIAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAEAAAAIAP//AAAHAAEAAAAIAP7/AAAAAAAAAAAHAAMAAAABAAIAAAAHAAIAAAABAAEAAAAHAAEAAAABAAEAAAAHAAAAAAABAAEAAAAHAP//AAABAAAAAAA=")
+tile_set = ExtResource("2_avlcg")
+
+[node name="BackPalmTrees" type="Node2D" parent="." index="2"]
+z_index = -1
+
+[node name="BackPalmTreeLeft" parent="BackPalmTrees" index="0" instance=ExtResource("3_mcl6o")]
+position = Vector2(-76, -82)
+
+[node name="BackPalmTreeRegular" parent="BackPalmTrees" index="1" instance=ExtResource("4_4whw0")]
+position = Vector2(46, 2)
+
+[node name="BackPalmTreeRight" parent="BackPalmTrees" index="2" instance=ExtResource("5_gfv43")]
+position = Vector2(174, -13)
+
+[node name="FrontPalmTrees" type="Node2D" parent="." index="3"]
+z_index = 1
+
+[node name="FrontPalmTreeLeft" parent="FrontPalmTrees" index="0" instance=ExtResource("6_kbnsq")]
+position = Vector2(-15, -45)
+
+[node name="FrontPalmTreeRight" parent="FrontPalmTrees" index="1" instance=ExtResource("7_vqgwb")]
+position = Vector2(234, -75)
+
+[node name="FrontPalmTreeRegular" parent="FrontPalmTrees" index="2" instance=ExtResource("8_0defv")]
+position = Vector2(115, -6)
+
+[node name="Collectibles" type="Node2D" parent="." index="4"]
+
+[node name="GoldCoin" parent="Collectibles" index="0" instance=ExtResource("9_5b0o5")]
+position = Vector2(68, 10)
+
+[node name="SilverCoin" parent="Collectibles" index="1" instance=ExtResource("10_bo7in")]
+position = Vector2(91, 10)
+
+[node name="GoldenSkull" parent="Collectibles" index="2" instance=ExtResource("11_psdgm")]
+position = Vector2(143, 11)
+
+[node name="RedPotion" parent="Collectibles" index="3" instance=ExtResource("12_ph8dx")]
+position = Vector2(-83, -48)
+
+[node name="BluePotion" parent="Collectibles" index="4" instance=ExtResource("13_nbx5k")]
+position = Vector2(-56, -48)
+
+[node name="GreenPotion" parent="Collectibles" index="5" instance=ExtResource("14_vkx1x")]
+position = Vector2(34, 9)
+
+[node name="GreenCrystal" parent="Collectibles" index="6" instance=ExtResource("15_qmu0v")]
+position = Vector2(303, -75)
+
+[node name="BlueCrystal" parent="Collectibles" index="7" instance=ExtResource("16_ehuue")]
+position = Vector2(272, -74)
+
+[node name="RedCrystal" parent="Collectibles" index="8" instance=ExtResource("17_x5dux")]
+position = Vector2(209, -51)

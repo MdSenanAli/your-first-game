@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3tyvnf1w10tc"]
+
+[ext_resource type="PackedScene" uid="uid://cwlgqwyg5av1d" path="res://player/pirate.tscn" id="1_s8gys"]
+
+[node name="LevelBase" type="Node2D"]
+
+[node name="TileMapLayers" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMapLayer" parent="TileMapLayers"]
+
+[node name="Pirate" parent="." instance=ExtResource("1_s8gys")]
+
+[node name="Camera2D" type="Camera2D" parent="Pirate"]
+zoom = Vector2(4, 4)

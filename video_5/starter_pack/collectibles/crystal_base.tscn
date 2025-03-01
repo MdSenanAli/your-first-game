@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://t3gyoeyyyqx3"]
+
+[ext_resource type="PackedScene" uid="uid://bxq4td8qwqg30" path="res://collectibles/collectible_base.tscn" id="1_0v0m6"]
+[ext_resource type="Texture2D" uid="uid://csykicpmoemej" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/01.png" id="2_cbu58"]
+[ext_resource type="Texture2D" uid="uid://iifplu8ncm61" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/02.png" id="3_5ook5"]
+[ext_resource type="Texture2D" uid="uid://cpk2jhnncavo8" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/03.png" id="4_pw4q0"]
+[ext_resource type="Texture2D" uid="uid://d3gbjqqqqg2qy" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/04.png" id="5_u1im5"]
+[ext_resource type="AudioStream" uid="uid://dhm77d5qkfe7w" path="res://sound_effects/crystal.mp3" id="6_1anga"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01bqc"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cbu58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ook5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pw4q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u1im5")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[node name="CrystalBase" instance=ExtResource("1_0v0m6")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_01bqc")
+animation = &"spin"
+
+[node name="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("6_1anga")

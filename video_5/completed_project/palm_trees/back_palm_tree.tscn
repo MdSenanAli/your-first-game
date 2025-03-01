@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0bxfd1vnd5h5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24e7v"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"movement",
+"speed": 10.0
+}]
+
+[node name="BackPalmTree" type="Node2D"]
+
+[node name="Leafs" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_24e7v")
+animation = &"movement"
+autoplay = "movement"
+frame_progress = 1.0

@@ -1,0 +1,74 @@
+[gd_scene load_steps=15 format=3 uid="uid://q4b6ic1i6nw7"]
+
+[ext_resource type="PackedScene" uid="uid://b4jrgjptejde7" path="res://collectibles/potion_base.tscn" id="1_4n4ae"]
+[ext_resource type="Texture2D" uid="uid://dqkcd1jc16eyq" path="res://assets/Pirate Treasure/Sprites/Potion Effect/01.png" id="2_85e1u"]
+[ext_resource type="Texture2D" uid="uid://ditnb2ejyfg8m" path="res://assets/Pirate Treasure/Sprites/Potion Effect/02.png" id="3_sgqih"]
+[ext_resource type="Texture2D" uid="uid://iie6ndfulqfg" path="res://assets/Pirate Treasure/Sprites/Potion Effect/03.png" id="4_r8ysa"]
+[ext_resource type="Texture2D" uid="uid://cgnays4mgaq44" path="res://assets/Pirate Treasure/Sprites/Potion Effect/04.png" id="5_2fksl"]
+[ext_resource type="Texture2D" uid="uid://bol80chjbpmj0" path="res://assets/Pirate Treasure/Sprites/Green Bottle/01.png" id="6_ag0eb"]
+[ext_resource type="Texture2D" uid="uid://bjchm8maoo3h8" path="res://assets/Pirate Treasure/Sprites/Green Bottle/02.png" id="7_jnm1b"]
+[ext_resource type="Texture2D" uid="uid://cxx42mfwsr5kj" path="res://assets/Pirate Treasure/Sprites/Green Bottle/03.png" id="8_kro51"]
+[ext_resource type="Texture2D" uid="uid://b4r4bwd0qtorq" path="res://assets/Pirate Treasure/Sprites/Green Bottle/04.png" id="9_o0lqv"]
+[ext_resource type="Texture2D" uid="uid://d2wol30p5a1li" path="res://assets/Pirate Treasure/Sprites/Green Bottle/05.png" id="10_lxf4k"]
+[ext_resource type="Texture2D" uid="uid://cgxmm7jx33vx4" path="res://assets/Pirate Treasure/Sprites/Green Bottle/06.png" id="11_81p75"]
+[ext_resource type="Texture2D" uid="uid://dq68mgxm5ctvf" path="res://assets/Pirate Treasure/Sprites/Green Bottle/07.png" id="12_5tnle"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eb8lo"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_85e1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sgqih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r8ysa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2fksl")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ag0eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jnm1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kro51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o0lqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lxf4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_81p75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5tnle")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ist1"]
+size = Vector2(12, 12)
+
+[node name="GreenPotion" instance=ExtResource("1_4n4ae")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_eb8lo")
+animation = &"spin"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_3ist1")

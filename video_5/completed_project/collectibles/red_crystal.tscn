@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0ss4dv4orkjt"]
+
+[ext_resource type="PackedScene" uid="uid://t3gyoeyyyqx3" path="res://collectibles/crystal_base.tscn" id="1_p5g4d"]
+[ext_resource type="Texture2D" uid="uid://csykicpmoemej" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/01.png" id="2_s6ox1"]
+[ext_resource type="Texture2D" uid="uid://iifplu8ncm61" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/02.png" id="3_yud4u"]
+[ext_resource type="Texture2D" uid="uid://cpk2jhnncavo8" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/03.png" id="4_ugpvb"]
+[ext_resource type="Texture2D" uid="uid://d3gbjqqqqg2qy" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/04.png" id="5_yajwm"]
+[ext_resource type="Texture2D" uid="uid://dhpuj5ucv3oxm" path="res://assets/Pirate Treasure/Sprites/Red Diamond/01.png" id="6_5x7kb"]
+[ext_resource type="Texture2D" uid="uid://depohlm1yv6sy" path="res://assets/Pirate Treasure/Sprites/Red Diamond/02.png" id="7_0qpx5"]
+[ext_resource type="Texture2D" uid="uid://b8bjn1v81x4gj" path="res://assets/Pirate Treasure/Sprites/Red Diamond/03.png" id="8_svsn1"]
+[ext_resource type="Texture2D" uid="uid://dpawjg08fg8g1" path="res://assets/Pirate Treasure/Sprites/Red Diamond/04.png" id="9_3r6nj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18v4u"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s6ox1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yud4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ugpvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yajwm")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5x7kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0qpx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_svsn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3r6nj")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xgh5i"]
+radius = 6.08276
+
+[node name="RedCrystal" instance=ExtResource("1_p5g4d")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_18v4u")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_xgh5i")

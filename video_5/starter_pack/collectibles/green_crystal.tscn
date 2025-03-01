@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://h1ccvo1c4hjx"]
+
+[ext_resource type="PackedScene" uid="uid://t3gyoeyyyqx3" path="res://collectibles/crystal_base.tscn" id="1_27ktv"]
+[ext_resource type="Texture2D" uid="uid://csykicpmoemej" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/01.png" id="2_yh74u"]
+[ext_resource type="Texture2D" uid="uid://iifplu8ncm61" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/02.png" id="3_d3j8i"]
+[ext_resource type="Texture2D" uid="uid://cpk2jhnncavo8" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/03.png" id="4_p72nd"]
+[ext_resource type="Texture2D" uid="uid://d3gbjqqqqg2qy" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/04.png" id="5_mbpry"]
+[ext_resource type="Texture2D" uid="uid://ciih7atcp4etj" path="res://assets/Pirate Treasure/Sprites/Green Diamond/01.png" id="6_vnq1d"]
+[ext_resource type="Texture2D" uid="uid://b1n8wx2qqs0kc" path="res://assets/Pirate Treasure/Sprites/Green Diamond/02.png" id="7_j7p5x"]
+[ext_resource type="Texture2D" uid="uid://ccbleeyfvcks5" path="res://assets/Pirate Treasure/Sprites/Green Diamond/03.png" id="8_dfrkf"]
+[ext_resource type="Texture2D" uid="uid://cdjcy63pxeeyp" path="res://assets/Pirate Treasure/Sprites/Green Diamond/04.png" id="9_0p00g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8npw"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yh74u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d3j8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p72nd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mbpry")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vnq1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j7p5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dfrkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0p00g")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_volxa"]
+size = Vector2(12, 12)
+
+[node name="GreenCrystal" instance=ExtResource("1_27ktv")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_r8npw")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_volxa")

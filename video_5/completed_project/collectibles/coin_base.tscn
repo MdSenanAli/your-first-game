@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cditck3j0n7bt"]
+
+[ext_resource type="PackedScene" uid="uid://bxq4td8qwqg30" path="res://collectibles/collectible_base.tscn" id="1_uwyja"]
+[ext_resource type="AudioStream" uid="uid://blfslr1parrmc" path="res://sound_effects/coin.wav" id="2_02acl"]
+[ext_resource type="Texture2D" uid="uid://nt3qwgttki3i" path="res://assets/Pirate Treasure/Sprites/Coin Effect/01.png" id="2_xkepm"]
+[ext_resource type="Texture2D" uid="uid://boxrp4ggv7jgq" path="res://assets/Pirate Treasure/Sprites/Coin Effect/02.png" id="3_1jpqu"]
+[ext_resource type="Texture2D" uid="uid://dx46jxlg62qrf" path="res://assets/Pirate Treasure/Sprites/Coin Effect/03.png" id="4_bimf3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46n6j"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xkepm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1jpqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bimf3")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esjpw"]
+radius = 6.0
+
+[node name="CoinBase" instance=ExtResource("1_uwyja")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_46n6j")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_esjpw")
+
+[node name="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource("2_02acl")
